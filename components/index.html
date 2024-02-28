@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmes</title>
+
+    <!-- LINK CSS  -->
+    <link rel="stylesheet" href="./style/global.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <!-- TAILWIND LINK  -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ICON  -->
+    <link rel="icon" type="image/svg" href="/logo.svg" />
+
+    <!-- CDN GOOGLE  -->
+    <!-- CDN ICONS  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <header
+      class="header fixed top-0 left-0 w-full h-auto z-50 transition-all ease-in-out delay-50"
+    >
+      <div class="flex justify-between items-center mt-4">
+        <img class="xl:w-1/12 w-[150px]" src="/logo.svg" alt="Logo" />
+
+        <nav class="mr-8">
+          <ul class="flex gap-6 text-xl font-bold">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#movie">Sobre</a></li>
+            <li>
+              <a
+                href="./pages/movie/movie.html"
+                class="p-2 border-2 border-yellow-300 hover:bg-white hover:border-none"
+                >Filmes</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="hero overflow-hidden h-screen w-screen bg-no-repeat bg-cover bg-center"
+        id="hero"
+      >
+        <div class="flex items-center justify-start">
+          <div class="container flex flex-col gap-6 xl:ml-16 mx-auto">
+            <h1 class="font-bold xl:text-6xl lg:text-5xl text-4xl xl:text-left text-center uppercase">
+              Os melhores filmes <span class="text-red-800">aqui</span>
+            </h1>
+            <p
+              class="text-xl font-light xl:w-2/4 lg:w-2/4 text-center xl:text-left xl:text-black xl:mt-0 mt-14"
+            >
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
+              tempora at eaque ipsam quaerat porro rem maxime consequuntur dolor
+              totam labore, unde quisquam corrupti quasi fugit similique quo
+              cupiditate tempore!
+            </p>
+
+            <div
+              class="btn-box-nav flex gap-6 text-xl mr-4 xl:mt-6 mt-16 xl:justify-start justify-center"
+            >
+              <a href="./pages/loginAndRegister/login.html">
+                <button
+                  class="bg-red-950 text-white hover:text-red-700 font-bold rounded-lg p-2 w-[100px]"
+                  id="login-btn"
+                >
+                  Login
+                </button>
+              </a>
+              <a href="./pages/loginAndRegister/register.html">
+                <button
+                  class="p-2 bg-sky-600 font-bold hover:bg-gray-600 hover:text-white hover:border-none rounded-lg"
+                  id="regis-btn"
+                >
+                  Register
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="box-img border-2 p-2 z-10 xl:block hidden ">
+            <img
+              class="z-5 img-hero border-2 p-2 w-[500px] h-[500px]"
+              src="./public/index_img/img-hero.png"
+              alt="Hero Img"
+            />
+          </div>
+          <div
+            class="absolute z-1 -right-5 top-[15rem] z-2 xl:block lg:block hidden"
+          >
+            <img
+              src="./public/index_img/hooks-img/retro-vertical-removebg-preview.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="h-screen w-screen " id="about">
+        <iframe
+          class="w-screen h-screen overflow-hidden"
+          src="./pages/about/about.html"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </section>
+
+      <section class="h-[110vh] w-screen overflow-y-hidden mx-auto">
+        <iframe
+          src="./pages/about/about-plus.html"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </section>
+
+      <section class="overflow-hidden w-screen mx-auto">
+        <iframe
+          class="w-screen h-[150vh]"
+          src="./pages/bestMovies/bestMovies.html"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </section>
+
+      <button
+        id="btnScrollToTop"
+        class="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-full shadow "
+      >
+        <i class="bi bi-arrow-up-circle text-2xl"></i>
+      </button>
+    </main>
+
+    <footer class="h-[250px] mx-auto overflow-hidden mt-[20rem]">
+      <iframe
+        src="./pages/footer/footer.html"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </footer>
+
+    <script src="./js/button.js"></script>
+    <script src="./js/header/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+
+.hero {
+    background-image: url('../public/index_img/background.jpg');
+    margin-top: 7rem;
+}
+
+.hero button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+    transition: all .3s ease-in;
+}
+
+header.sticky {
+    background: yellow;
+    color:  azure;
+}
+
+.box-img {
+    position: relative;
+    left: -15rem;
+}
+
+.img-hero {
+    width: auto;
+    height: 450px;
+
+}
+
+
+
+/* HOOKS  */
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}

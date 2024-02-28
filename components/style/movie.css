@@ -1,0 +1,79 @@
+#container-trailer img {
+  padding: 10px;
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#container-awards img {
+  padding: 10px;
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.item {
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.gender .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 400;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: yellow;
+}
+
+/* Exibição do dropdown quando o mouse está sobre o componente de gênero */
+.gender:hover .dropdown-content {
+  display: block;
+}
+
+#container-trailer img:hover {
+  opacity: 0.5;
+}
+
+#container-awards img:hover {
+  opacity: 0.5;
+}
+
+#container-trailers .item:hover, #container-awards .item:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out forwards ;
+
+}
+
+.item .details-button {
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid black;
+  margin-top: 10px;
+ 
+}
+
+
+#details-trailer .details-container  {
+    gap: 10px
+}
+
+
+
+
