@@ -40,7 +40,7 @@
   background-color: yellow;
 }
 
-/* Exibição do dropdown quando o mouse está sobre o componente de gênero */
+
 .gender:hover .dropdown-content {
   display: block;
 }
@@ -74,6 +74,8 @@
     gap: 10px
 }
 
-
+#moreMovie {
+  background-image: url('../public/bestMovies-img/a.jpg')
+}
 
 

@@ -1,15 +1,5 @@
-
 .hero {
-    background-image: url('../public/index_img/background.jpg');
-    margin-top: 7rem;
-}
-
-.hero button:hover {
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid white;
-    transition: all .3s ease-in;
+    background-image: url('../public/index_img/back.jpg');
 }
 
 header.sticky {
@@ -29,10 +19,13 @@ header.sticky {
 }
 
 
-
 /* HOOKS  */
 
 .show {
     opacity: 1;
     pointer-events: auto;
+}
+
+.open {
+    display: block;
 }
