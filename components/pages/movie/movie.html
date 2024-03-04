@@ -7,8 +7,8 @@
     <title>Movie web</title>
 
     <!-- LINK CSS  -->
-    <link rel="stylesheet" href="/components/style/global.css" />
-    <link rel="stylesheet" href="/components/style/movie.css" />
+    <link rel="stylesheet" href="../../style/global.css" />
+    <link rel="stylesheet" href="../../style/movie.css" />
 
     <!-- TAILWIND LINK  -->
     <link
@@ -30,7 +30,7 @@
     <header>
       <div class="container mx-auto">
         <div class="flex justify-between items-center mt-4">
-          <img class="xl:w-1/12 w-[150px]" src="/logo.svg" alt="Logo" />
+          <img class="xl:w-1/12 w-[150px]" src="../../../logo.svg"  alt="Logo" />
 
           <nav class="mr-8 font-bold text-xl">
             <ul class="flex items-center">
@@ -54,27 +54,6 @@
           <div class="gap-4 xl:flex lg:flex hidden">
             <a href="./trailerPage.html">Trailers</a>
             <a href="#awards">Premiados</a>
-            <div class="gender">
-              <div
-                class="flex items-center gap-2"
-                id="gender"
-                onmouseenter="showDropdown()"
-                onclick="toggleDropdown()"
-                onmouseleave="hideDropdown()">
-                <span>Generos</span>
-                <i class="bi bi-arrow-down-short hidden" id="arrow-down"></i>
-                <i class="bi bi-arrow-right-short block" id="arrow-left"></i>
-                <div
-                  class="dropdown-content flex flex-col font-light top-[10rem] ml-[5rem] text-[16px]"
-                  id="dropdownContent">
-                  <a href="#">Action</a>
-                  <a href="#">Adventure</a>
-                  <a href="#">Comedy</a>
-                  <a href="#">Drama</a>
-                  <a href="#">Horror</a>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="flex flex-col gap-4">
@@ -106,7 +85,7 @@
       </div>
       <div class="hidden">
         <div
-          class=" p-4 gap-4 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 h-auto w-full"
+          class="p-4 gap-4 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 h-auto w-full"
           id="search-results"></div>
       </div>
 
@@ -139,14 +118,20 @@
       </div>
     </main>
 
+    <button
+      id="btnScrollToTop"
+      class="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-full shadow">
+      <i class="bi bi-arrow-up-circle text-2xl"></i>
+    </button>
+
     <footer class="h-[250px] mx-auto overflow-hidden mt-[20rem]">
       <iframe src="../footer/footer.html" width="100%" height="100%"></iframe>
     </footer>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../../jss/hooks/hmbResponsive.js"></script>
-    <script src="/components/jss/hooks/dropdown.js"></script>
-    <script src="/components/jss/hooks/arrow.js"></script>
-    <script src="/components/jss/script.js"></script>
+    <script src="../../jss/hooks/arrow.js"></script>
+    <script src="../../jss/hooks/button.js"></script>
+    <script src="../../jss/script.js"></script>
   </body>
 </html>
