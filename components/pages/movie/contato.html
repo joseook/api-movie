@@ -10,7 +10,8 @@
       href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../style/global.css">
+    <link rel="stylesheet" href="../../style/contact.css">
 
     <!-- ICON WEBSITE  -->
     <link rel="icon" type="image/png" href="/logo.svg" />
@@ -20,81 +21,118 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     
+    <!-- ALERTIFY -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 </head>
-<body>
-    
-    <section class="contact w-screen h-screen">
-        <div class="container mx-auto overflow-hidden flex">
-            <div class="flex flex-col items-center justify-self-start max-w-2xl gap-4">
-                <h1 class="text-6xl font-bold text-gray-900 tracking-widest text-left">Contact</h1>
-                <p class="text-gray-700 text-lg w-3/4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quasi.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quasi.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quasi.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quasi.
-                </p>
+<body class="overflow-hidden">
+    <header>
+        <div class="container mx-auto">
+          <div class="flex justify-between items-center mt-4">
+            <img class="xl:w-1/12 w-[150px]" src="/logo.svg" alt="Logo" />
+  
+            <nav class="mr-8 font-bold text-xl">
+              <ul class="flex items-center">
+                <li class="mr-8">
+                  <a href="./movie.html">Home</a>
+                </li>
+                <li class="mr-8">
+                  <a href="./contato.html">Contato</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      
+    <section class="contact w-screen h-screen overflow-hidden bg-no-repeat bg-center bg-cover">
+        <div class="container mx-auto max-w-screen-xl flex justify-between items-center">
+            <div class="flex flex-col gap-1">
+                <img class="w-[600px]" src="../../public/contact-img/back-contaact.png" alt="">
+                <div class="flex flex-col">
+                    <h1 class="text-center font-bold text-3xl mb-4 text-white">Informações para entrar em <span class="text-teal-800">contato</span> </h1>
+                    <div class="flex items-center gap-12 p-4 border-t-4">
+                        <i class="bi bi-telephone-inbound text-4xl border-2 bg-slate-400 transform hover:scale-105 rounded-full p-2"></i>
+                        <div class="flex flex-col gap-2">
+                            <span>Telefone</span>
+                            <span>(11) 99999-9999</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-12 p-4">
+                        <i class="bi bi-envelope-fill text-4xl border-2 bg-slate-400 rounded-full p-2 transform hover:scale-105"></i>
+                        <div class="flex flex-col gap-2">
+                            <span>movie.enterprise@alien.com</span>
+                        </div>
+                    </div> 
+                    <div class="flex items-center gap-12 p-4">
+                        <i class="bi bi-geo-alt-fill text-4xl border-2 bg-slate-400 rounded-full p-2 transform hover:scale-105"></i>
+                        <div class="flex flex-col gap-2">
+                            <span>Av. American Alyen, AR 36</span>
+                        </div>
+                    </div> 
+                </div>
             </div>
-            <div class="flex flex-col gap-4">
-                <img src="#" alt="">
-                <form action="#">
-                    <div class="container mx-auto flex flex-wrap">
-                        <div class="flex flex-col gap-4">
+        
+                <form action="#" class="flex flex-col relative p-16 bg-gray-800 rounded-lg" id="contactForm">
+                    <h1 class="font-bold text-center text-4xl text-white ">Entre em contato conosco</h1>
+                    <div class="container mx-auto flex flex-wrap justify-center">
+                        <div class="flex flex-col gap-4 mt-4">
                             <div class="flex flex-col">
-                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">
+                                <label for="name" class="block text-white text-sm font-bold mb-2">
                                     Name
                                 </label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    required
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                />
+                                <div class="flex gap-2 items-center">
+                                    <i class="bi bi-people absolute text-2xl ml-2 text-white"></i>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="nameInput"
+                                        placeholder="Username"
+                                        required
+                                        class="shadow pl-12 appearance-none border text-white rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                                    />
+
+                                </div>
                             </div>
                             <div>
                                 <label for="email" class="block text-gray-700 text-sm font-bold mb-2" >
-                                    email
+                                    E-mail
                                 </label>
-                                <input
+                                <div class="flex gap-2 items-center">
+                                    <i class="bi bi-envelope-arrow-down absolute text-2xl ml-2 text-white "></i>
+                                    <input
                                     type="email"
                                     name="email"
-                                    id="email"
+                                    id="emailInput"
+                                    placeholder="E-mail"
                                     required
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                />
-                            </div>
-                            <div>
-                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2" >
-                                    Senha
-                                </label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    required
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                />
+                                    class="shadow appearance-none pl-12 border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                                />    
+                                </div>
+                                
                             </div>
                             <div>
                                 <input
                                     type="textarea"
                                     name="textarea"
-                                    id="textarea"
+                                    id="textareaInput"
                                     required
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    class="shadow appearance-none h-36 border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     placeholder="Digite aqui o sobre o que deseja falar."
                                 />
                             </div>
-                            <div>
-                                <input type="submit" value="Enviar" id="submit-button">
+                            <div class="flex gap-2 ml-20 items-center  text-white hover:bg-emerald-300 max-w-max p-2 transform hover:scale-105 transition-all delay-150 ease-in-out">
+                                <input class="font-bold text-xl cursor-pointer" type="submit" value="Enviar" id="submit-button">
+                                <i class="bi bi-send-arrow-up-fill text-xl"></i>
                             </div> 
                         </div>
                     </div>
                 </form>
-            </div>
-
         </div>
     </section>
-
-</body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="../../jss/contact/script.js"></script>
+</body> 
 </html>

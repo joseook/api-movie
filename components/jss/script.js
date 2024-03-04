@@ -17,22 +17,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     const containerTrailer = document.getElementById('container-trailer');
     containerTrailer.addEventListener('mouseover', handleMouseOver);
     containerTrailer.addEventListener('mouseout', handleMouseOut);
-    containerTrailer.addEventListener('click', handlePosterClick);
-
+    
     const containerAwards = document.getElementById('container-awards');
     containerAwards.addEventListener('mouseover', handleMouseOver);
     containerAwards.addEventListener('mouseout', handleMouseOut);
-    containerAwards.addEventListener('click', handlePosterClick);
 
     document.getElementById('submit-movies').addEventListener('click', handleSearch);
 
     const dropdownItems = document.querySelectorAll('.dropdown-content a');
     dropdownItems.forEach(item => {
         item.addEventListener('click', handleDropdownClick);
-    });
-
-    const searchInput = document.getElementById('search-input');
-    searchInput.addEventListener('input', handleInput);
+    });  
 });
 
 async function fetchTrailers(API_KEY) {
@@ -47,61 +42,123 @@ async function fetchAwards(API_KEY) {
     return data.Search || [];
 }
 
+async function fetchMovieDetails(imdbID) {
+    const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`);
+    const data = await response.json();
+
+    if (data && data.Response === "True") {
+        return data;
+    } else {
+        throw new Error("Não foi possível obter os detalhes do filme");
+    }
+}
+
 async function searchMovie(httpsAPI) {
     const response = await fetch(httpsAPI);
     const data = await response.json();
     return data.Search || [];
 }
 
-function loadingList(listing, containerId) {
+async function loadingList(listing, containerId) {
     const container = document.getElementById(containerId);
     container.innerHTML = '';
 
-    listing.forEach(element => {
-        const item = createListItem(element);
-        container.appendChild(item);
-    });
+    for (const movie of listing) {
+        try {
+            const details = await fetchMovieDetailsByTitle(movie.Title);
+            const item = createListItem(details);
+            container.appendChild(item);
+        } catch (error) {
+            console.error("Erro ao carregar detalhes do filme:", error);
+        }
+    }
 }
 
-function createListItem(element) {
+
+async function loadingList(listing, containerId) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+
+    for (const movie of listing) {
+        try {
+            const details = await fetchMovieDetailsByTitle(movie.Title);
+            const item = createListItem(details);
+            container.appendChild(item);
+        } catch (error) {
+            console.error("Erro ao carregar detalhes do filme:", error);
+        }
+    }
+}
+
+
+async function fetchMovieDetailsByTitle(title) {
+    const response = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`);
+    const data = await response.json();
+
+    if (data && data.Response === "True") {
+        return data;
+    } else {
+        throw new Error("Não foi possível obter os detalhes do filme");
+    }
+}
+
+
+function createListItem(movie) {
     const item = document.createElement('div');
     item.classList.add('item');
+    
+    console.log("Dados do filme:", movie); 
+    
+    const title = movie.Title ? movie.Title : 'Não identificado';
+    const year = movie.Year ? movie.Year : 'Não identificado';
+    const type = movie.Type ? movie.Type : 'Não identificado';
+    const country = movie.Country ? movie.Country : 'Não identificado';
+    const actors = movie.Actors ? movie.Actors : 'Não identificado';
+    
     item.innerHTML = `
-        <img src="${element.Poster}" 
-             data-title="${element.Title}" 
-             data-year="${element.Year}" 
-             data-type="${element.Type}" 
-             data-awards="${element.Awards}" 
-             data-genre="${element.Genre}" /> 
-        <h2>Titulo: ${element.Title}</h2>
-        <p>Ano: ${element.Year}</p>
-        <p>Tipo: ${element.Type}</p>
+        <img src="${movie.Poster}" /> 
+        <h2>Titulo: ${title}</h2>
+        <p>Ano: ${year}</p>
+        <p class='capitalize'>Tipo: ${type}</p>
+        <p>País: ${country}</p>
+        <p>Atores: ${actors}</p>
     `;
+    
+    item.addEventListener('click', () => {
+        sessionStorage.setItem('movieDetails', JSON.stringify(movie));
+        window.location.href = './movieDetails.html';
+    });
+    
     return item;
 }
 
 function handleMouseOver(event) {
     const item = event.target.closest('.item');
     if (item && !event.target.classList.contains('details-button')) {
-        addDetailsButton(item);
+        if (!item.querySelector('.details-button')) {
+            addDetailsButton(item);
+        }
     }
 }
 
 function handleMouseOut(event) {
     const item = event.target.closest('.item');
-    if (item) {
+    const relatedTarget = event.relatedTarget;
+    if (!relatedTarget || !item.contains(relatedTarget)) {
         removeDetailsButton(item);
     }
 }
 
 function addDetailsButton(item) {
-    const existingButton = item.querySelector('.details-button');
-    if (!existingButton) {
-        const button = document.createElement('button');
-        button.classList.add('details-button');
-        button.textContent = 'Mais Detalhes';
-        item.appendChild(button);
-    }
+    const button = document.createElement('button');
+    button.classList.add('details-button');
+    button.textContent = 'Mais Detalhes';
+    item.appendChild(button);
+    button.addEventListener('click', () => {
+        const movieDetails = item.dataset;
+        sessionStorage.setItem('movieDetails', JSON.stringify(movieDetails));
+        window.location.href = './movieDetails.html';
+    });
 }
 
 function removeDetailsButton(item) {
@@ -124,7 +181,7 @@ async function handleSearch(e) {
 
     const moviesFound = await searchMovie(httpsAPI);
 
-    if (moviesFound.length === 0) {
+    if (moviesFound.length === 0 || moviesFound.length === null || moviesFound === undefined) {
         alert("Nenhum filme encontrado!");
         return;
     }
@@ -142,43 +199,34 @@ function displayMovies(movies) {
         const item = createListItem(movie);
         container.appendChild(item);
     });
+
+    container.parentElement.classList.remove('hidden');
 }
 
-function handlePosterClick(event) {
-    const details_trailer = document.getElementById('details-trailer');
-    const img = event.target.closest('img');
-    if (img) {
-        const title = img.dataset.title;
-        const year = img.dataset.year;
-        const type = img.dataset.type;
-        const country = img.dataset.country;
-        const genre = img.dataset.genre;
-        const awards = img.dataset.awards;
 
-        const details = document.createElement('div');
-        details.innerHTML = `
-            <div id='details-container'>
-                <h2>${title}</h2>
-                <p>Ano: ${year}</p>
-                <p>Tipo: ${type}</p>
-                <p>País: ${country || 'Não especificado'}</p>
-                <p>Genêro: ${genre || 'Não especificado'}</p>
-                <p>Awards: ${awards || 'Não possui'}</p>
-            </div>
-        `;
-
-        details_trailer.innerHTML = '';
-        details_trailer.appendChild(details);
-        details_trailer.classList.remove('hidden');
-    }
-}
-
-function handleDropdownClick(event) {
+async function handleDropdownClick(event) {
     const genre = event.target.textContent;
-    const filteredMovies = allMovies.filter(movie => movie.Genre && movie.Genre.includes(genre));
+    const filteredMovies = [];
+    const promises = [];
+    
+    for (const movie of allMovies) {
+        promises.push(fetchMovieDetails(movie.imdbID));
+    }
+
+    const moviesDetails = await Promise.all(promises);
+
+    for (const details of moviesDetails) {
+        console.log('Detalhes do filme:', details);
+        const genresArray = details.Genre ? details.Genre.split(',').map(genre => genre.trim()) : [];
+        console.log('Gêneros do filme:', genresArray);
+        if (genresArray.includes(genre)) {
+            filteredMovies.push(details);
+        }
+    }
+
+    console.log('Filmes filtrados:', filteredMovies);
     displayMovies(filteredMovies);
     
     document.getElementById('trailers').style.display = 'none';
     document.getElementById('awards').style.display = 'none';
 }
-

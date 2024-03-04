@@ -7,13 +7,21 @@
     <title>Login Movie</title>
 
     <!-- LINK CSS  -->
-    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../../style/global.css" />
 
     <!-- TAILWIND LINK  -->
     <link
       href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css"
       rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ALERTIFY  -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
 
     <!-- ICON WEBSITE  -->
     <link rel="icon" type="image/png" href="/logo.svg" />
@@ -30,49 +38,53 @@
         <div class="flex flex-col gap-14">
           <h1
             class="xl:text-left text-white text-center font-bold text-5xl tracking-widest xl:w-4/5">
-            Login to your account
+            Faça o login com sua conta
           </h1>
           <form action="#" class="flex justify-start flex-col gap-7">
-            <div class="flex items-center bg-gray-700 max-w-max gap-4">
+            <div class="input-field flex items-center bg-gray-700 max-w-max gap-4">
               <i class="bi bi-people text-white text-2xl ml-4"></i>
               <input
                 type="text"
                 name="user"
                 id="userInput"
                 placeholder="Username"
-                class="shadow-lg rounded-sm p-3 pl-10 text-white"
+                class="shadow-lg rounded-sm p-3 pl-10 text-white input-field"
                 required />
             </div>
-            <div class="flex items-center gap-4 bg-gray-700 max-w-max">
+            <div class="input-field flex items-center gap-4 bg-gray-700 max-w-max">
               <i class="bi bi-envelope text-white text-2xl ml-4"></i>
               <input
                 type="email"
                 name="email"
                 id="emailInput"
                 placeholder="Email"
-                class="shadow-lg text-white rounded-sm p-3 pl-10"
+                class="shadow-lg text-white rounded-sm p-3 pl-10 input-field"
                 required />
             </div>
-            <div class="flex items-center gap-4 bg-gray-700 max-w-max">
+            <div class="input-field flex items-center gap-4 bg-gray-700 max-w-max">
               <i class="bi bi-key text-white text-2xl ml-4"></i>
               <input
                 type="password"
                 name="password"
                 id="passwordInput"
                 placeholder="Senha"
-                class="shadow-lg rounded-sm p-3 pl-10 text-white"
+                class="shadow-lg rounded-sm p-3 pl-10 text-white input-field"
                 required />
             </div>
-            <div class="flex justify-center xl:justify-start items-center">
+            <div class=" flex justify-center xl:justify-start items-center">
               <button
-                class="text-2xl font-bold bg-slate-800 w-[200px] rounded-xl text-white p-2"
-                type="submit" id="btn-login">
+                class="text-xl transform hover:scale-110 hover:text-black hover:bg-white font-bold bg-orange-400 w-[150px] rounded-xl text-white p-2"
+                type="submit"
+                id="btn-login">
                 Login <i class="bi bi-box-arrow-in-right"></i>
               </button>
             </div>
             <div class="flex gap-4 items-center">
               <a class="text-red-600" href="#">Esqueceu a senha?</a>
-              <a class="text-teal-700 xl:hidden lg:hidden block" onclick="showRegisterForm()" href="#"
+              <a
+                class="text-teal-700 xl:hidden lg:hidden block"
+                onclick="showRegisterForm()"
+                href="#"
                 >Cadastre-se</a
               >
             </div>
@@ -93,17 +105,19 @@
               src="/components/public/login-img/illustrator-login.png"
               alt="" />
           </div>
-          <div class="flex items-center justify-center mt-12 bg-yellow-800 max-w-max xl:ml-[33%]">
+          <div
+            class="flex items-center justify-center transform hover:bg-white hover:text-black hover:scale-110 mt-12 bg-yellow-800 max-w-max xl:ml-[33%]">
             <button
-              class="text-xl text-center rounded-xl text-white p-2"
+              class="text-xl font-bold text-center hover:text-black rounded-xl text-white p-2"
               onclick="showRegisterForm()">
               Cadastre-se
             </button>
-            <i class="bi bi-arrow-bar-right text-2xl text-white"></i>
+            <i
+              class="bi bi-arrow-bar-right text-2xl text-white hover:text-black"></i>
           </div>
         </div>
       </div>
-      <div class="bg-gray-800 hidden p-24 w-[70vw]" id="register-body">
+      <div class="bg-gray-800 hidden p-24" id="register-body">
         <div class="flex justify-between">
           <div
             class="flex-col gap-6 items-center bg-indigo-600 max-w-md rounded-l-lg border-2 xl:block lg:block hidden">
@@ -120,10 +134,11 @@
                 src="/components/public/login-img/illustrator-login.png"
                 alt="" />
             </div>
-            <div class="flex gap-3 text-white items-center mb-4 p-2 hover:bg-orange-300 rounded-lg xl:ml-[33%] max-w-32">
+            <div
+              class="flex gap-3 text-white items-center mb-4 p-2 hover:bg-orange-300 rounded-lg xl:ml-[33%] max-w-32">
               <i class="bi bi-arrow-bar-left"></i>
               <button
-                class="text-2xl font-bold rounded-lg "
+                class="text-2xl font-bold rounded-lg"
                 id="btnLoginReturn"
                 onclick="showLoginForm()">
                 Login
@@ -136,35 +151,35 @@
             </h1>
             <form
               action="#"
-              class="flex justify-start ml-12 flex-col gap-7 p-4">
-              <div class="flex items-center bg-gray-700 max-w-max gap-4">
+              class="flex justify-start xl:ml-12 lg:ml-12 flex-col gap-7 p-4">
+              <div class="input-field flex items-center bg-gray-700 max-w-max gap-4">
                 <i class="bi bi-people text-white text-2xl ml-4"></i>
                 <input
                   type="text"
                   name="user"
                   id="userInputR"
                   placeholder="Username"
-                  class="shadow-lg rounded-sm p-3 pl-10 text-white"
+                  class="shadow-lg rounded-sm p-3 pl-10 text-white input-field"
                   required />
               </div>
-              <div class="flex items-center gap-4 bg-gray-700 max-w-max">
+              <div class="input-field flex items-center gap-4 bg-gray-700 max-w-max">
                 <i class="bi bi-envelope text-white text-2xl ml-4"></i>
                 <input
                   type="email"
                   name="email"
                   id="emailInputR"
                   placeholder="Email"
-                  class="shadow-lg text-white rounded-sm p-3 pl-10"
+                  class="shadow-lg text-white rounded-sm p-3 pl-10 input-field"
                   required />
               </div>
-              <div class="flex items-center gap-4 bg-gray-700 max-w-max">
+              <div class="input-field flex items-center gap-4 bg-gray-700 max-w-max">
                 <i class="bi bi-key text-white text-2xl ml-4"></i>
                 <input
                   type="password"
                   name="password"
                   id="passwordInputR"
                   placeholder="Senha"
-                  class="shadow-lg rounded-sm p-3 pl-10 text-white"
+                  class="shadow-lg rounded-sm p-3 pl-10 text-white input-field"
                   required />
               </div>
               <div class="flex items-center gap-2 mt-4">
@@ -175,8 +190,10 @@
               </div>
               <div class="flex justify-center">
                 <button
-                  class="text-2xl font-bold bg-slate-800 w-[200px] rounded-xl text-white p-2 flex justify-center gap-2 items-center"
-                  type="submit">
+                  class="text-xl font-bold bg-primary transform hover:scale-110 hover:bg-neutral-950 w-[200px] rounded-xl text-white p-2 flex justify-center gap-2 items-center"
+                  type="submit"
+                  id="btn-register"
+                  >
                   Cadastrar <i class="bi bi-box-arrow-in-right"></i>
                 </button>
               </div>
@@ -185,6 +202,11 @@
         </div>
       </div>
     </div>
-    <script src="/components/js/loginAndRegister/script.js" type="module"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script
+      src="/components/jss/loginAndRegister/script.js"
+      type="module"></script>
   </body>
 </html>

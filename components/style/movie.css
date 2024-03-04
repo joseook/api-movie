@@ -1,24 +1,57 @@
-#container-trailer img {
-  padding: 10px;
-  width: 200px;
-  height: 250px;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-#container-awards img {
-  padding: 10px;
-  width: 200px;
-  height: 250px;
-  margin: 0 auto;
-  cursor: pointer;
-}
 
 .item {
-  border: 1px solid black;
-  padding: 10px;
-  font-size: 20px;
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out;
 }
+
+.item:hover{
+  transform: scale(1.1);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  
+}
+
+.item img {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px 8px 0 0;
+}
+
+
+.item h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+
+.details-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+  background-color: #2563eb;
+}
+
 
 .gender .dropdown-content {
   display: none;
@@ -45,37 +78,33 @@
   display: block;
 }
 
-#container-trailer img:hover {
-  opacity: 0.5;
+
+/* MOVIE DETAILS  */
+
+#detailsSection {
+  background-image: url('../public/detailsMovie/shape-wavy01.jpg');
+  
 }
 
-#container-awards img:hover {
-  opacity: 0.5;
+#movie-details h2{
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
-#container-trailers .item:hover, #container-awards .item:hover {
-  background-color: #ddd;
-  transform: scale(1.1);
-  transition: 0.5s ease-in-out forwards ;
-
+#movie-details img{
+  width: 300px;
+  height: 300px;
+  border-radius: 8px 8px 0 0;
+  margin: auto;
 }
 
-.item .details-button {
-  padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  border: 1px solid black;
-  margin-top: 10px;
- 
+#movie-details .container-p {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: start;
+  padding-left: 2rem;
+  gap: 1rem;
 }
-
-
-#details-trailer .details-container  {
-    gap: 10px
-}
-
-#moreMovie {
-  background-image: url('../public/bestMovies-img/a.jpg')
-}
-
-

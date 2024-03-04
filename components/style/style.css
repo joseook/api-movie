@@ -18,6 +18,17 @@ header.sticky {
 
 }
 
+#about {
+    background-image: url('../public/about-img/shape-wavy02.jpg');
+}
+
+#about-plus {
+    background-image: url('../public/about-img/wavyshape.jpg');
+}
+
+#moreMovie {
+    background-image: url('../public/bestMovies-img/bg-03.png');
+}
 
 /* HOOKS  */
 
@@ -29,3 +40,4 @@ header.sticky {
 .open {
     display: block;
 }
+

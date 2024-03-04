@@ -1,64 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TAILWIND LINK  -->
-    <link
-      href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CDN GOOGLE  -->
-    <!-- CDN ICONS  -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
+  <!-- TAILWIND LINK  -->
+  <link href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- CDN GOOGLE  -->
+  <!-- CDN ICONS  -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
-<body class="overflow-x-hidden">
-    <section class="flex h-screen w-screen mt-4 mx-auto">
-        <div class="mx-auto flex items-center justify-center w-full xl:border-t-2 ">
-            <div class="hidden xl:block">
-                <div>
-                  <img class="absolute top-[-7rem] left-0" src="/components/public/index_img/hooks-img/cabide-removebg-preview.png" alt="">
-                </div>
-                <div>
-                  <img class="absolute top-[-7rem] right-0" src="/components/public/index_img/hooks-img/cabide-removebg-preview.png" alt="">
-                </div>
+<body class="overflow-hidden">
+  <section class="flex h-auto w-screen">
+    <div class="mx-auto container justify-center flex items-center">
+      <div class="card-box text-white flex justify-center flex-1 mt-12 xl:flex-nowrap flex-wrap items-center gap-12 xl:max-w-xs xl:max-h-xs lg:max-w-xs lg:max-h-xs">
+        
+        <!-- Card 1 -->
+        <div class="card border-2 border-black filter drop-shadow-2xl rounded-xl max-w-md md:max-w-sm transition-transform duration-500 hover:scale-110">
+          <div class="header-card w-full">
+            <img class="w-[500px] h-[300px] p-2" src="../../public/about-img/01.jpg" alt="" />
+          </div>
+          <div class="flex flex-col gap-2 mb-8">
+            <span class="text-center text-blue-500 tracking-widest mt-2">Alien</span>
+            <h1 class="text-center font-bold text-4xl">Card Number One</h1>
+            <p class="font-light p-2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              aut reiciendis recusandae, magni, voluptatem eum obcaecati,
+              fugit debitis aliquid voluptates perspiciatis consectetur
+              ducimus odio assumenda iure nobis in fugiat. In.
+            </p>
+          </div>
+          <div class="flex gap-3 bg-blue-500 text-center rounded-br-lg rounded-bl-lg">
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
             </div>
-
-          <div class="card-box flex justify-center items-center w-full ">
-            <div class="flex xl:flex-row lg:flex-row flex-col gap-6">
-              <div class="card p-6 border-2 xl:max-w-md lg:max-w-md max-w-sm max-h-max">
-                <span class="flex items-center gap-4 border-2 p-4 mb-12">
-                  <span class="material-icons-outlined text-4xl">movie</span>
-                  <h1 class="text-2xl">Movie</h1>
-                </span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-                  voluptate quasi officiis beatae mollitia optio eveniet
-                  perferendis blanditiis. Deserunt hic alias beatae dolor! Error
-                  quaerat saepe atque maiores doloribus impedit!
-                </p>
-              </div>
-              <div class="card p-6 border-2 xl:max-w-md lg:max-w-md max-w-sm max-h-max ">
-                <span class="flex items-center gap-4 border-2 p-4 mb-12">
-                  <span class="material-icons-outlined text-4xl">movie</span>
-                  <h1 class="text-2xl">Movie</h1>
-                </span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-                  voluptate quasi officiis beatae mollitia optio eveniet
-                  perferendis blanditiis. Deserunt hic alias beatae dolor! Error
-                  quaerat saepe atque maiores doloribus impedit!
-                </p>
-              </div>
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
+            </div>
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
             </div>
           </div>
         </div>
-      </section>
+        
+        <!-- Card 2 -->
+        <div class="card border-2 border-black filter drop-shadow-xl rounded-xl max-w-md md:max-w-sm transition-transform duration-500 hover:scale-110">
+          <div class="header-card w-full">
+            <img class="w-[500px] h-[300px] p-2" src="../../public/about-img/02.jpg" alt="" />
+          </div>
+          <div class="flex flex-col gap-2 mb-8">
+            <span class="text-center text-green-500 tracking-widest mt-2">Field</span>
+            <h1 class="text-center font-bold text-4xl">Card Number One</h1>
+            <p class="font-light p-2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              aut reiciendis recusandae, magni, voluptatem eum obcaecati,
+              fugit debitis aliquid voluptates perspiciatis consectetur
+              ducimus odio assumenda iure nobis in fugiat. In.
+            </p>
+          </div>
+          <div class="flex gap-3 bg-green-500 text-center rounded-br-lg rounded-bl-lg">
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
+            </div>
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
+            </div>
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card border-2 border-black rounded-xl max-w-md md:max-w-sm transition-transform duration-500 hover:scale-110">
+          <div class="header-card w-full">
+            <img class="w-[500px] h-[300px] p-2" src="../../public/about-img/03.jpg" alt="" />
+          </div>
+          <div class="flex flex-col gap-2 mb-8">
+            <span class="text-center text-red-500 tracking-widest mt-2">Ollen</span>
+            <h1 class="text-center font-bold text-4xl">Card Number One</h1>
+            <p class="font-light p-2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              aut reiciendis recusandae, magni, voluptatem eum obcaecati,
+              fugit debitis aliquid voluptates perspiciatis consectetur
+              ducimus odio assumenda iure nobis in fugiat. In.
+            </p>
+          </div>
+          <div class="flex gap-3 bg-red-500 text-center rounded-br-lg rounded-bl-lg">
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
+            </div>
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
+            </div>
+            <div class="flex flex-col gap-2 p-2 w-[150px]">
+              <h4 class="text-2xl text-white font-bold">200+</h4>
+              <p class="text-white">Aliens</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>

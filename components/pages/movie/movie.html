@@ -14,8 +14,6 @@
     <link
       href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css"
       rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- ICON  -->
     <link rel="icon" type="image/svg" href="/logo.svg" />
 
@@ -78,19 +76,20 @@
               </div>
             </div>
           </div>
-        
-        <div class="flex flex-col gap-4">
-            <div class="block xl:hidden lg:hidden ml-8">
-                <button id="menu-toggle"><i class="bi bi-list text-black text-3xl "></i></button>
-            </div>
-        </div>
 
+          <div class="flex flex-col gap-4">
+            <div class="block xl:hidden lg:hidden ml-8">
+              <button id="menu-toggle">
+                <i class="bi bi-list text-black text-3xl"></i>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="mr-4 flex gap-4 items-center">
           <label for="#" class="xl:flex lg:flex hidden">Search</label>
           <input
             type="text"
-            class="p-2 rounded-lg"
+            class="p-2 rounded-lg xl:max-w-full lg:max-w-full max-w-[150px]"
             placeholder="Pesquise aqui"
             id="search-input"
             required />
@@ -101,61 +100,57 @@
       </header>
       <div class="hidden menu-mobile bg-sky-200 p-4 text-center">
         <div class="flex flex-col gap-4 font-bold text-xl">
-            <a href="./trailerPage.html">Trailers</a>
-            <a href="#awards">Premiados</a>
-            <div class="gender">
+          <a href="./trailerPage.html">Trailers</a>
+          <a href="#awards">Premiados</a>
+          <div class="gender">
+            <div class="flex items-center gap-2" id="gender">
+              <span>Generos</span>
+              <i class="bi bi-arrow-down-short hidden" id="arrow-down"></i>
+              <i class="bi bi-arrow-right-short block" id="arrow-left"></i>
               <div
-                class="flex items-center gap-2"
-                id="gender"
-                onmouseenter="showDropdown()"
-                onclick="toggleDropdown()"
-                onmouseleave="hideDropdown()">
-                <span>Generos</span>
-                <i class="bi bi-arrow-down-short hidden" id="arrow-down"></i>
-                <i class="bi bi-arrow-right-short block" id="arrow-left"></i>
-                <div
-                  class="dropdown-content flex flex-col font-light top-[10rem] ml-[5rem] text-[16px]"
-                  id="dropdownContent">
-                  <a href="#">Action</a>
-                  <a href="#">Adventure</a>
-                  <a href="#">Comedy</a>
-                  <a href="#">Drama</a>
-                  <a href="#">Horror</a>
-                </div>
+                class="dropdown-content flex flex-col font-light top-[10rem] ml-[5rem] text-[16px]"
+                id="dropdownContent">
+                <a href="#" id="crime" data-genre="Crime">Crime</a>
+                <a href="#" id="adventure" data-genre="Adventure">Adventure</a>
+                <a href="#" id="comedy" data-genre="Comedy">Comedy</a>
+                <a href="#" id="drama" data-genre="Drama">Drama</a>
+                <a href="#" id="horror" data-genre="Horror">Horror</a>
               </div>
             </div>
+          </div>
         </div>
-        </div>
-      <div
-        class="border-2 p-4 gap-4 grid grid-cols-4"
-        id="search-results"></div>
+      </div>
+      <div class="hidden">
+        <div
+          class=" p-4 gap-4 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 h-auto w-full"
+          id="search-results"></div>
+      </div>
 
       <div class="container mx-auto mt-4" id="trailers">
-        <h1 class="font-bold text-4xl underline mb-12 xl:text-left lg:text-left text-center">Trailers Famosos</h1>
-        <div class="flex justify-end mr-4">
-          <a class="border-2 p-2 font-bold text-xl" href="#">Ver todos</a>
-        </div>
-        <div class="flex justify-start items-center p-4 xl:max-w-full ">
-            <div class="flex justify-center items-center ">
-                <div id="container-trailer" class="grid xl:grid-cols-4 md:grid-cols-2 md:max-w-full gap-4 sm:max-w-xs xl:max-w-full"></div>
-            </div>
-        </div>
-        <div
-          class="max-w-lg absolute mx-auto top-[70%] left-[33%] border-2 p-12 hidden bg-slate-500 text-white gap-3"
-          id="details-trailer">
-          <span class="z-30"><i class="bi bi-x"></i></span>
+        <h1
+          class="font-bold text-4xl underline mb-12 xl:text-left lg:text-left text-center">
+          Trailers Famosos
+        </h1>
+        <div class="flex justify-start items-center p-4 xl:max-w-full">
+          <div class="flex justify-center items-center">
+            <div
+              id="container-trailer"
+              class="grid xl:grid-cols-4 md:grid-cols-2 md:max-w-full gap-4 sm:max-w-xs xl:max-w-full"></div>
+          </div>
         </div>
       </div>
 
       <div class="container mx-auto mt-4" id="awards">
-        <h1 class="font-bold text-4xl underline mb-12 xl:text-left lg:text-left text-center">Premiados</h1>
-        <div class="flex justify-end">
-          <a class="border-2 p-2 font-bold text-xl mb-4" href="#">Ver todos</a>
-        </div>
-        <div class="flex justify-start items-center p-4 xl:max-w-full ">
-            <div class="flex justify-center items-center ">
-                <div id="container-awards" class="grid xl:grid-cols-4 md:grid-cols-2 md:max-w-full gap-4 sm:max-w-xs xl:max-w-full"></div>
-            </div>
+        <h1
+          class="font-bold text-4xl underline mb-12 xl:text-left lg:text-left text-center">
+          Premiados
+        </h1>
+        <div class="flex justify-start items-center p-4 xl:max-w-full">
+          <div class="flex justify-center items-center">
+            <div
+              id="container-awards"
+              class="grid xl:grid-cols-4 md:grid-cols-2 gap-4 w-full"></div>
+          </div>
         </div>
       </div>
     </main>
@@ -164,9 +159,10 @@
       <iframe src="../footer/footer.html" width="100%" height="100%"></iframe>
     </footer>
 
-    <script src="../../js/hooks/hmbResponsive.js"></script>
-    <script src="/components/js/hooks/dropdown.js"></script>
-    <script src="/components/js/hooks/arrow.js"></script>
-    <script src="/components/js/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../jss/hooks/hmbResponsive.js"></script>
+    <script src="/components/jss/hooks/dropdown.js"></script>
+    <script src="/components/jss/hooks/arrow.js"></script>
+    <script src="/components/jss/script.js"></script>
   </body>
 </html>

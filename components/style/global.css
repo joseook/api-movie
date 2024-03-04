@@ -30,6 +30,7 @@
     --bg-gray-light: #999;
     --bg-gray-lighter: #666;
     --bg-gray-lightest: #333;
+
 }
 
 
@@ -65,8 +66,24 @@ section {
     
 }
 
-input:focus {
+input[text], input[password] {
+    transition: all 0.5s linear ; 
+}
+
+header.scroll {
+    transition: all .5s ease-in ;
+}
+
+input.invalid {
     outline: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border: 2px solid red;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border: 2px solid yellow;
 }
 
 @keyframes scroll {

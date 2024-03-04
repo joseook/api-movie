@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (menuM.classList.contains('open')) {
             menuM.classList.remove('open');
-            menuToggle.innerHTML = '<i class="bi bi-list text-black text-3xl"></i>'; 
+            menuToggle.innerHTML = '<i class="bi bi-list text-white text-3xl"></i>'; 
             menuM.classList.add('hidden');
         } else {
             menuM.classList.add('open');
-            menuToggle.innerHTML = '<i class="bi bi-x text-black text-3xl"></i>'; 
+            menuToggle.innerHTML = '<i class="bi bi-x text-white text-3xl"></i>'; 
             menuM.classList.remove('hidden');
         }
     }

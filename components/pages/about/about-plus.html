@@ -1,67 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- TAILWIND LINK  -->
-    <link
-      href="https://unpkg.com/tailwindcss@^2.2/dist/tailwind.min.css"
-      rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- CDN GOOGLE  -->
-    <!-- CDN ICONS  -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
-      rel="stylesheet" />
-  </head>
-  <body class="overflow-x-hidden">
-    <section class="h-screen w-screen .about-addction ">
-      <div class="container mx-auto">
-        <h1 class="text-center font-bold uppercase text-4xl  xl:text-6xl">
-          História do <span class="text-teal-500">cinema</span>
-        </h1>
-        <div
-          class="flex w-full items-center xl:gap-[10rem] gap-6 mt-28 xl:flex-row lg:flex-row flex-col">
-          <div class="flex flex-col border-2 xl:max-w-md lg:max-w-md max-w-sm max-h-min p-6">
-            <h1 class="font-bold xl:text-5xl text-3xl">Historia</h1>
-            <p class="text-start mt-4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
-              vero rem aspernatur unde illum suscipit quae nesciunt qui
-              voluptatem pariatur nemo porro dolorum a, autem architecto dicta
-              id. Reprehenderit, ipsa!
-            </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TAILWIND LINK  -->
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <!-- CDN ICONS  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="overflow-hidden">
+  <section class="h-screen w-screen flex flex-col md:flex-row justify-center items-center">
+    <div class="w-full md:w-1/2 flex justify-center">
+      <div class="flex flex-col">
+        <img class="rounded-lg xl:flex lg:flex hidden" src="/components/public/about-img/back-cinema.jpg" alt="Imagem do Cinema">
+        <div class="mt-4 max-w-max gap-4 xl:flex lg:flex hidden">
+          <div class="rounded-lg bg-slate-950 transform hover:scale-110 transition-all delay-150 cursor-pointer hover:bg-yellow-300 text-white p-4">
+            <h4 class="text-2xl text-center">Alien</h4>
+            <p class="text-center text-white">+ 300 filmes</p>
           </div>
-          <div class="flex flex-col border-2 xl:max-w-md lg:max-w-md max-w-sm max-h-min p-6">
-            <h1 class="font-bold xl:text-5xl text-3xl">Historia</h1>
-            <p class="text-start mt-4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
-              vero rem aspernatur unde illum suscipit quae nesciunt qui
-              voluptatem pariatur nemo porro dolorum a, autem architecto dicta
-              id. Reprehenderit, ipsa!
-            </p>
+          <div class="rounded-lg bg-slate-950 transform hover:scale-110 transition-all delay-150 cursor-pointer hover:bg-green-300 text-white p-4">
+            <h4 class="text-2xl text-center">Avatar</h4>
+            <p class="text-center text-white">+ 300 filmes</p>
           </div>
-          <img
-            class="rounded-lg xl:block lg:block hidden"
-            src="/components/public/about-img/back-cinema.jpg"
-            alt="" />
-        </div>
-        <div class="flex xl:justify-start items-center gap-4 xl:mt-0 mt-12 xl:ml-0 justify-center">
-          <div class="flex flex-col bg-sky-300 rounded-lg p-4 text-white xl:w-1/12 text-center">
-            <span class="font-bold text-xl">+ 150</span>
-            <span>Filmes</span>
-          </div>
-          <div class="flex flex-col bg-sky-300 rounded-lg p-4 text-white xl:w-1/12 text-center ">
-            <span class="font-bold text-xl">+ 150</span>
-            <span>Filmes</span>
-          </div>
-          <div class="flex flex-col bg-sky-300 rounded-lg p-4 text-white xl:w-1/12 text-center">
-            <span class="font-bold text-xl">+ 150</span>
-            <span>Filmes</span>
+          <div class="rounded-lg bg-slate-950 transform hover:scale-110 transition-all delay-150 cursor-pointer hover:bg-cyan-400 text-white p-4">
+            <h4 class="text-2xl text-center">Star Wars</h4>
+            <p class="text-center text-white">+ 300 filmes</p>
           </div>
         </div>
       </div>
-    </section>
-  </body>
+    </div>
+    <div class="w-full md:w-1/2 grid xl:grid-cols-2 lg:grid-cols-2 justify-center items-start xl:gap-4 gap-12">
+      <!-- Card 1 -->
+      <div class="max-w-xs h-80 p-4 border-2 border-black bg-slate-300 relative transform transition-transform duration-500 hover:scale-110 card-box ">
+        <div class="absolute bg-slate-900 top-0 rounded-full border-2 border-white p-6 -mt-8 left-0 transform -translate-x-1/2 bg-icone">
+          <i class="bi bi-camera-reels text-white text-3xl"></i>
+        </div>
+        <h1 class="text-4xl text-center font-bold mb-4">História do Cinema</h1>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+          dolor. Autem repellat, suscipit tempora quis, aperiam ea veniam ut
+          beatae animi sed iure nobis minus qui ipsam consectetur dolorum
+          commodi.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="max-w-xs h-80 p-4 border-2 border-black bg-gray-200 relative transform transition-transform duration-500 hover:scale-110 card-box">
+        <div class="absolute bg-slate-900 top-0 rounded-full border-2 border-white p-6 -mt-8 left-0 transform -translate-x-1/2 bg-icone">
+          <i class="bi bi-film text-white text-3xl"></i>
+        </div>
+        <h1 class="text-4xl text-center font-bold mb-4">Grandes Diretores</h1>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+          dolor. Autem repellat, suscipit tempora quis, aperiam ea veniam ut
+          beatae animi sed iure nobis minus qui ipsam consectetur dolorum
+          commodi.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="max-w-xs h-80 p-4 border-2 border-black bg-gray-200 relative transform transition-transform duration-500 hover:scale-110 card-box">
+        <div class="absolute bg-slate-900 hover: top-0 rounded-full border-2 border-white p-6 -mt-8 left-0 transform -translate-x-1/2 bg-icone">
+          <i class="bi bi-tv text-white text-3xl"></i>
+        </div>
+        <h1 class="text-4xl text-center font-bold mb-4">Cenas Memoráveis</h1>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+          dolor. Autem repellat, suscipit tempora quis, aperiam ea veniam ut
+          beatae animi sed iure nobis minus qui ipsam consectetur dolorum
+          commodi.
+        </p>
+      </div>
+      <!-- Card 4 -->
+      <div class="max-w-xs h-80 p-4 border-2 border-black bg-gray-200 relative transform transition-transform duration-500 hover:scale-110 card-box">
+        <div class="absolute bg-slate-900 top-0 rounded-full border-2 border-white p-6 -mt-8 left-0 transform -translate-x-1/2 bg-icone">
+          <i class="bi bi-music-note-list text-white text-3xl"></i>
+        </div>
+        <h1 class="text-4xl text-center font-bold mb-4">Trilhas Sonoras Incríveis</h1>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+          dolor. Autem repellat, suscipit tempora quis, aperiam ea veniam ut
+          beatae animi sed iure nobis minus qui ipsam consectetur dolorum
+          commodi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const cardBoxes = document.querySelectorAll('.card-box');
+
+    cardBoxes.forEach(cardBox => {
+      cardBox.addEventListener('mouseover', function () {
+        const bgIcone = cardBox.querySelector('.bg-icone');
+        bgIcone.style.background = 'green';
+      });
+
+      cardBox.addEventListener('mouseleave', function () {
+        const bgIcone = cardBox.querySelector('.bg-icone');
+        bgIcone.style.background = '';
+      });
+    });
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
 </html>
