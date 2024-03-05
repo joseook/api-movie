@@ -21,7 +21,7 @@ This project integrates with the OMDB API to search for movie trailers and award
 
 1. Clone the repository to your local environment.
    ```bash
-   git clone https://github.com/your-username/movie-search-project.git
+   git clone https://github.com/joseook/api-movie.git
    ```
 
 2. Open the `movie.html` file in your web browser.
