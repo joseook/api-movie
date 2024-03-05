@@ -45,6 +45,10 @@ const API_KEY = 'Your-API-Key-Here';
 
 Contributions are welcome! If you encounter any issues or have improvements to suggest, feel free to open an issue or submit a pull request.
 
+## Observation
+
+This project was created with the aim of student learning
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
